@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './button';
+import Button from './Button.jsx';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 

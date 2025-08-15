@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import Button from './button'
+import Button from './Button.jsx'
 import { FaArrowRight } from "react-icons/fa6"; 
 import imageone from '../assets/images/imageone.jpg'
 import imagetwo from '../assets/images/imagetwo.jpg'

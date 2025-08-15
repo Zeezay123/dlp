@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import image from '../assets/images/nbunetvc.png';
 import imagetwo from '../assets/images/media.mtu.png';
-import Button from './button';
+import Button from './Button.jsx';
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
