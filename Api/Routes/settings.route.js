@@ -1,6 +1,6 @@
 import express from "express";
 import { verifyToken } from "../utils/verifyUser.js";
-import { getSettings,getSection,updateSettings,updateSection,} from "../controllers/sitesettings.controller.js"
+import { getSettings,getSection,updateSettings,updateSection,} from "../controllers/siteSettings.controller.js"
 
 
 const router = express.Router();
