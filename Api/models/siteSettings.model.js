@@ -38,13 +38,15 @@ const SiteSettingsSchema = new mongoose.Schema({
   programmes: {
     title: { type: String, default: "Our Programmes" },
     subtitle: { type: String, default: "Explore opportunities" },
-    introTitle: { type: String, default: "Programme Highlights" },
-    introSubtitle: { type: String, default: "Learn more about our courses" },
+    introtitle: { type: String, default: "Programme Highlights" },
+    introsubtitle: { type: String, default: "Learn more about our courses" },
   },
 
   blog: {
     title: { type: String, default: "Latest News" },
     subtitle: { type: String, default: "Stay updated" },
+    introtitle: { type: String, default: "Latest News" },
+    introsubtitle: { type: String, default: "Stay updated" },
   },
 
   calltoaction: {

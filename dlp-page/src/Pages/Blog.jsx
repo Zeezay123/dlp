@@ -9,21 +9,29 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
   const [post, setPost] = useState([]);
+  const [blog, setBlog] = useState([])
   const [showMore, setShowMore] = useState(true);
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const res = await fetch('/api/post/getposts');
-        const data = await res.json();
 
-        if (!res.ok) {
+        const [resData, blogresData] = await Promise.all([
+          fetch('/api/post/getposts'),
+          fetch('/api/settings/blog')
+        ])
+          
+        const [res, blogres] = await Promise.all([resData.json(), blogresData.json() ])
+        // const res = await fetch('/api/post/getposts');
+        // const data = await res.json();
+
+        if (!resData.ok || !blogresData.ok) {
           setErr(true);
           return;
         }
-
-        setPost(data.posts);
+        setBlog(blogres)
+        setPost(res.posts);
       } catch (err) {
         console.log(err.message);
         setErr(true);
@@ -55,7 +63,7 @@ const Blog = () => {
   return (
     <main>
       {/* Hero Section */}
-      <SecondHero />
+      <SecondHero title={blog.title} content={blog.subtitle} />
 
       {/* Title */}
       <section className="mt-28 text-center">

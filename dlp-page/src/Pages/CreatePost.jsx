@@ -105,9 +105,10 @@ setPublishErr('something went wrong')
             className='flex-1' onChange={(e)=>{setFormData({...formData, title:e.target.value})}} />
             <Select className='min-w-40' onChange={(e)=>{setFormData({...formData, category:e.target.value})}}>
                 <option value='uncategories'> Select a category </option>
-                <option value='news'> Fees </option>
-                <option value='news'> Course </option>
-                <option value='news'> Exams </option>
+                <option value='journal'> Journal </option>
+                <option value='nursing'> Nursing </option>
+                <option value='news'> News </option>
+                <option value='article'> Article </option>
 
             </Select>
 

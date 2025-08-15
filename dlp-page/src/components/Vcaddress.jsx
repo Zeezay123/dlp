@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import image from '../assets/images/nbunetvc.png';
 import imagetwo from '../assets/images/media.mtu.png';
 import Button from './button';
@@ -7,7 +7,47 @@ import { Link } from 'react-router-dom';
 
 const Vcaddress = () => {
   const [vcToggle, setVcToggle] = useState(true);
-
+   const [data, setData] = useState(null);
+  useEffect(() => {
+    
+  const fetchdata = async ()=>{
+    try {
+       
+       const res = await fetch('/api/settings/about')
+       const data = await res.json()
+       if(res.ok){
+   
+        setData(data)
+        console.log(data)
+        return
+       }
+  
+       if(!res.ok){
+        console.log('cant get response')
+       }
+  
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+  
+  fetchdata()
+       
+  }, [])
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   return (
     <section className="m-4 sm:m-8 md:m-12 lg:m-20 bg-slate-200 shadow rounded-xl flex flex-col lg:flex-row p-4 
     sm:p-8 md:p-10 items-center justify-between min-h-[40rem]">
@@ -34,7 +74,7 @@ const Vcaddress = () => {
             onClick={() => setVcToggle(true)}
           >
             <h1 className="font-[inter] font-semibold text-base sm:text-lg md:text-[18px]/6">
-              Prof. Asaju Abdulazez (Vice Chancellor)
+              Prof. Samuel Ogheneovo Asagba. (Vice Chancellor)
             </h1>
             <p
               className={`w-full sm:w-[22rem] md:w-[28rem] lg:w-[30rem] font-[inter] text-xs sm:text-sm md:text-[14px]/5
@@ -42,11 +82,7 @@ const Vcaddress = () => {
                 vcToggle ? 'line-clamp-5 mt-2' : 'hidden'
               }`}
             >
-              Delta State University, Abraka, was established in April 1992 and has emerged as a prominent 
-              institution both nationally and internationally. The university has achieved the goals, mission, and vision
-               set by its founders, with alumni excelling on a global scale. Adapting to the changing global landscape,
-                DELSU has evolved into a dual-mode university, leading to the establishment of the Centre for Open Distance and E-Learning (CODEL)...
-            </p>
+             {data?.vcMessage || 'loading'}            </p>
           </div>
 
           <div
@@ -56,15 +92,15 @@ const Vcaddress = () => {
             onClick={() => setVcToggle(false)}
           >
             <h1 className="font-[inter] font-semibold text-base sm:text-lg md:text-[18px]/6">
-              Prof. Asaju Abdulazez (Director)
+              Prof O. Odedede (Director)
             </h1>
             <p
               className={`w-full sm:w-[22rem] md:w-[28rem] lg:w-[30rem] font-[inter] text-xs sm:text-sm md:text-[14px]/5 font-normal text-slate-700 text-justify ${
                 !vcToggle ? 'line-clamp-5 mt-2' : 'hidden'
               }`}
             >
-              Delta State University, Abraka, was established in April 1992 and has emerged as a prominent institution both nationally and internationally. The university has achieved the goals, mission, and vision set by its founders, with alumni excelling on a global scale. Adapting to the changing global landscape, DELSU has evolved into a dual-mode university, leading to the establishment of the Centre for Open Distance and E-Learning (CODEL)...
-            </p>
+           {data?.directorMessage  || 'loading'}  
+             </p>
           </div>
         </div>
 
@@ -75,9 +111,9 @@ const Vcaddress = () => {
 
       <div className="w-full mt-8 lg:mt-0  lg:w-[35%] flex-shrink-0 shadow rounded-3xl flex items-center justify-center">
         {vcToggle ? (
-          <img className="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover rounded-3xl" src={image} alt="" />
+          <img className="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover rounded-3xl" src={data?.vcimage || ''} alt="" />
         ) : (
-          <img className="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover rounded-3xl" src={imagetwo} alt="" />
+          <img className="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover rounded-3xl" src={data?.directorimage || ''} alt="" />
         )}
       </div>
     </section>

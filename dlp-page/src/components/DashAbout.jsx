@@ -31,7 +31,7 @@ const SECTION_FIELDS = {
   howtoapplytwo: ["title", "subtitle"],
   howtoapplythree: ["title", "subtitle"],
   programmes: ["title", "subtitle", "introTitle", "introSubtitle"],
-  blog: ["title", "subtitle"],
+  blog: ["title", "subtitle","introsubtitle","introsubtitle"],
   calltoaction: ["title", "subtitle"],
 };
 
@@ -127,14 +127,14 @@ export default function SiteSettingsAdmin() {
   const handleUploadVcImage = async () => {
     if (!vcImageFile) return;
     const url = await uploadImage(vcImageFile, setVcUploadProgress);
-    if (url) setFormData((prev) => ({ ...prev, vcImage: url }));
+    if (url) setFormData((prev) => ({ ...prev, vcimage: url }));
   };
 
   // Upload and update URL in formData for Director Image
   const handleUploadDirectorImage = async () => {
     if (!directorImageFile) return;
     const url = await uploadImage(directorImageFile, setDirectorUploadProgress);
-    if (url) setFormData((prev) => ({ ...prev, directorImage: url }));
+    if (url) setFormData((prev) => ({ ...prev, directorimage: url }));
   };
 
   async function handleSave() {

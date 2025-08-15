@@ -1,0 +1,88 @@
+
+      {/* Administration Section */}
+      <section className="py-12 px-6">
+        <h2 className="text-2xl font-bold text-center text-blue-900 mb-8">
+          Administration Structure
+        </h2>
+
+        <div className="overflow-x-auto">
+          {/* <div className="flex flex-col items-center gap-6">
+            {/* Top Level */}
+            <div className="bg-blue-200 px-6 py-3 rounded shadow font-bold">
+              ADMINISTRATION
+            </div>
+
+            {/* Second Level */}
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                "Vice Chancellor",
+                "CODEL Governing Board",
+                "Director",
+              ].map((role, i) => (
+                <div
+                  key={i}
+                  className={`px-6 py-3 rounded shadow cursor-pointer ${
+                    role === "Vice Chancellor"
+                      ? "bg-blue-800 text-white"
+                      : role === "Director"
+                      ? "bg-blue-600 text-white"
+                      : "bg-blue-100"
+                  }`}
+                  onClick={() => {
+                    if (roleKeys[role]) setActiveRole(roleKeys[role]);
+                  }}
+                >
+                  {role}
+                </div>
+              ))}
+            </div>
+
+            {/* Third Level */}
+            <div className="flex flex-wrap justify-center gap-4 mt-4">
+              {[
+                "Deputy Director",
+                "Representative of the Bursar",
+                "Representative of the Registrar",
+                "Representative of the Library",
+                "Deputy Director of ICT",
+                "Deputy Director (Acad)",
+              ].map((role, i) => (
+                <div
+                  key={i}
+                  className="border border-blue-300 px-4 py-2 rounded bg-white shadow-sm cursor-pointer"
+                  onClick={() => {
+                    if (roleKeys[role]) setActiveRole(roleKeys[role]);
+                  }}
+                >
+                  {role}
+                </div>
+              ))}
+            </div>
+
+            {/* Fourth Level */}
+            <div className="flex flex-wrap justify-center gap-4 mt-4">
+              {[
+                "Administrative staff",
+                "Programme coordinators",
+                "Website/LMS Programmers",
+                "Modules, Processing, E-Tutoring, E-Library",
+                "Learners support staff",
+              ].map((role, i) => (
+                <div
+                  key={i}
+                  className="border border-blue-200 px-4 py-2 rounded bg-gray-50 shadow-sm"
+                >
+                  {role}
+                </div>
+              ))}
+            </div>
+
+            {/* Fifth Level */}
+            <div className="mt-2">
+              <div className="border border-blue-200 px-4 py-2 rounded bg-gray-50 shadow-sm">
+                Lecturer
+              </div>
+            </div>
+          {/* </div> */} 
+        </div>
+      </section>

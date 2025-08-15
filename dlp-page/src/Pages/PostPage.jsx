@@ -86,8 +86,8 @@ const PostPage = () => {
 
       {/* Article Content */}
       <section className="max-w-4xl mx-auto px-5 py-10">
-        <article className="prose prose-lg prose-gray max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <article className=" max-w-none">
+          <div className="'p-3 max-w-2xl mx-auto w-full post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
       </section>
 

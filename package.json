@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon Api/index.js",
-    "start": "node Api/index.js"
+    "start": "node Api/index.js",
+    "build": "npm install && npm install --prefix dlp-page && npm run build --prefix dlp-page"
   },
   "keywords": [],
   "author": "",

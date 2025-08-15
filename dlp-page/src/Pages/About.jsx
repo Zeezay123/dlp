@@ -18,6 +18,7 @@ const fetchdata = async ()=>{
      if(res.ok){
  
       setData(data)
+      console.log(data)
       return
      }
 
@@ -64,7 +65,7 @@ return(
 
 
 
-   <div className="md:absolute max-w-[500px] max-h-[800px] md:w-[500px] md:h-[800px] top-10 right-20 flex"><img className="w-full h-full object-cover" src={imagetwo} alt="" /></div>
+   <div className="md:absolute max-w-[500px] max-h-[800px] md:w-[500px] md:h-[800px] top-10 right-20 flex"><img className="w-full h-full object-contain" src={data?.vcimage || ''} alt="" /></div>
    </div>
 
 <div className="flex flex-col-reverse md:flex-row p-5 md:p-30 md:relative">
@@ -78,7 +79,7 @@ Prof O. Odedede  </h1>
       <p className="text-blue-900 text-justify text-sm font-normal font-sans ">Director, CODEL </p>
 
 </div>
-   <div className="md:absolute max-w-[500px] max-h-[800px] md:w-[500px] md:h-[800px] top-10 right-20 flex"><img className="w-full h-full object-cover" src={imagetwo} alt="" /></div>
+   <div className="md:absolute max-w-[500px] max-h-[800px] md:w-[500px] md:h-[800px] top-10 right-20 flex"><img className="w-full h-full object-contain" src={data?.directorimage || ""} alt="" /></div>
    </div>
 
    <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:p-20 p-5 ">
