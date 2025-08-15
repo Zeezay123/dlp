@@ -36,15 +36,15 @@ app.use('/api/post', postRoutes);
 
 // Static + Catch-all
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve()
 
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '..', 'dlp', 'dlp-page', 'dist')));
+app.use(express.static(path.join(__dirname, 'dlp/dlp-page')));
 
 // Handle all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'dlp', 'dlp-page', 'dist', 'index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,  'dlp-page', 'dist', 'index.html'));
 });
 
 // Error handler
