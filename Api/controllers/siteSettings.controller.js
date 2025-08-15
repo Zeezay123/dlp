@@ -1,4 +1,4 @@
-import SiteSettings from "../models/sitesettings.model.js";
+import SiteSettings from "../models/siteSettings.model.js";
 import { errorHandler } from "../utils/error.js";
 
 // Get all site settings
