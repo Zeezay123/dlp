@@ -72,3 +72,19 @@
   background-color: rgb(30, 41, 59);
   border: 1px solid rgb(61, 69, 83);
 }
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo {
+  background: url('/dlp-page/public/vite.png') no-repeat center;
+}
