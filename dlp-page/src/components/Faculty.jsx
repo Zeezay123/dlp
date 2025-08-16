@@ -8,7 +8,7 @@ const DepartmentSection = () => {
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
-        const res = await fetch("http://localhost:5173/api/departments/getdepart");
+        const res = await fetch("api/departments/getdepart");
         if (!res.ok) throw new Error("Failed to fetch departments");
         const data = await res.json();
 
