@@ -43,10 +43,9 @@ const __dirname = path.resolve()
 app.use(express.static(path.join(__dirname, 'dlp-page/dist'))); 
 
 // // Handle all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,  'dlp-page', 'dist', 'index.html'));
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'dlp-page', 'dist', 'index.html'));
 });
-
 // Error handler
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
