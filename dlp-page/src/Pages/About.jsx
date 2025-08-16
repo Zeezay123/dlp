@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import trialDB from "../../../triadb";
 import imagetwo from '../assets/images/nbunetvc.png'
 import { Card } from "flowbite-react";
 import CallToAction from "../components/CallToAction";

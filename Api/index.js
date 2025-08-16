@@ -35,15 +35,15 @@ app.use('/api/announce', announceRoutes);
 app.use('/api/post', postRoutes);
 
 // Static + Catch-all
-const __filename = fileURLToPath(import.meta.url);
+// const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.resolve()
 
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'dlp/dlp-page')));
+// // Serve static files
+app.use(express.static(path.join(__dirname, 'dlp-page/dist'))); 
 
-// Handle all other routes
-app.get('/', (req, res) => {
+// // Handle all other routes
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname,  'dlp-page', 'dist', 'index.html'));
 });
 
